@@ -147,11 +147,11 @@ html, body {
     <section class="container">
         <div class="login-container">
             <h1>Welcome Back!</h1>
-            <form>
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
-                <button>Login</button>
-            </form>
+            <form action="LoginServlet" method="post">
+    <input type="text" name="username" placeholder="Username" />
+    <input type="password" name="password" placeholder="Password" />
+    <button>Login</button>
+</form>
             <div class="register-forget">
                 <a href="signup.jsp">Register</a>
                 <a href="#">Forgot Password?</a>
