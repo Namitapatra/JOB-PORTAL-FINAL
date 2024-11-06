@@ -19,7 +19,7 @@
                   <i class="fas fa-user-friends fa-3x"></i>
                  <c:if test="${not empty succMsg}">
                       <div class="alert alert-success" role="alert">${succMsg}</div> 
-                      <c:remove ver="succMsg"/>
+                      <c:remove var="succMsg"/>
                   </c:if> 
                   
                   <h5>Add Jobs</h5>
