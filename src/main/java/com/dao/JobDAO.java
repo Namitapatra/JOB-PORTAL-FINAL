@@ -14,30 +14,29 @@ public class JobDAO {
 		this.conn = conn;
 	}
 	
-	public boolean addJobs(Jobs j)
-	{
-		boolean f=false;
+	public boolean addJobs(Jobs j) {
+		boolean f = false;
 		
 		try {
+			String sql = "insert into job_portal(title,description,catagory,status,location) values(?,?,?,?,?)"; 
 			
-			String sql="insert into job_portal(title,description,catagory,status,location) values(?,?,?,?,?)"; 
-			
-			PreparedStatement ps=conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, j.getTitle());
-			ps.setString(2,j.getDescription());
+			ps.setString(2, j.getDescription());
 			ps.setString(3, j.getCatagory());
 			ps.setString(4, j.getStatus());
 			ps.setString(5, j.getLocation());
 			 
-			int i=ps.executeUpdate();
+			int i = ps.executeUpdate();
 			
-			if(i==1) {
+			if (i == 1) {
 				f = true;
 			}
 			
-			
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return f;  
 	}
 }
