@@ -2,7 +2,6 @@ package com.DB;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 public class DBConnect {
 	
 	private static Connection conn;
