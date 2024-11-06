@@ -18,7 +18,7 @@ public class JobDAO {
 		boolean f = false;
 		
 		try {
-			String sql = "insert into job_portal(title,description,catagory,status,location) values(?,?,?,?,?)"; 
+			String sql = "insert into jobs(title,description,catagory,status,location) values(?,?,?,?,?)"; 
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, j.getTitle());
