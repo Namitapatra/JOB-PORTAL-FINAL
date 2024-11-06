@@ -2,6 +2,9 @@ package com.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.etity.Jobs;
 
@@ -39,4 +42,28 @@ public class JobDAO {
 		
 		return f;  
 	}
+	
+	public List<Jobs> getAllJobs()
+	{
+		List<Jobs> list=new ArrayList<Jobs>();
+		Jobs j=null;
+		
+		try {
+			
+			String sql="select * from jobs order by id description";
+			PreparedStatement ps=conn.prepareStatement(sql);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next())
+			{
+				j=new Jobs();
+				j.
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
 }
