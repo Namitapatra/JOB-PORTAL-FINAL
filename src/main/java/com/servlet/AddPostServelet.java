@@ -39,10 +39,10 @@ public class AddPostServelet extends HttpServlet {
 			boolean f=dao.addJobs(j);
 			if(f)
 			{
-				session.setAttribute("msg", "Job Post Sucessfully..");
+				session.setAttribute("succMsg", "Job Post Sucessfully..");
 				resp.sendRedirect("add_job.jsp");
 			}else {
-				session.setAttribute("msg", "Something wrong on server");
+				session.setAttribute("succMsg", "Something wrong on server");
 				resp.sendRedirect("add_job.jsp");
 			}
 			
