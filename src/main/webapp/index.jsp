@@ -32,7 +32,7 @@ out.println(conn);
      
        </h1>
    
-    </div>
+    </div> 
  </div>
  <%@include file="all_component/footer.jsp" %>
 </body>
