@@ -26,11 +26,11 @@
               </div>
               <form action="add_job" method="post">
                   <div class="form-group">
-                     <label>Enter Titel</label> <input type="text" name="totle" required class="form-control">
+                     <label>Enter Title</label> <input type="text" name="title" required class="form-control">
                   </div>
                   <div class="form-row">
                      <div class="form-group col-md-4">
-                        <label>Location</label> <select name="Location" class="custom-select" id="inlineFormCustomSelectPref">
+                        <label>Location</label> <select name="location" class="custom-select" id="inlineFormCustomSelectPref">
                              <option selectrd>Choose...</option>
                              <option value="Odisha">Odisha</option>
                              <option value="Jharkhand">Jharkhand</option>
@@ -43,7 +43,7 @@
                         </select>
                      </div>
                      <div class="form-group col-md-4">
-                         <label>Category</label> <select class="custom-select" id="inlineFormCustomSelectPref" name="Category">
+                         <label>Category</label> <select class="custom-select" id="inlineFormCustomSelectPref" name="category">
                                 <option selectrd>Choose...</option>
                                 <option value="IT">IT</option>    
                                 <option value="Devloper">Devloper</option>
@@ -54,7 +54,7 @@
                      </div>
                      
                      <div class="form-group col-md-4">
-                         <label>Status</label> <select class="form-control" name="ststus">
+                         <label>Status</label> <select class="form-control" name="status">
                               <option class="Active" value="Active">Active</option>
                                <option class="Inactive" value="Inactive">Inactive</option>
                          </select>
@@ -63,7 +63,7 @@
                   
                   <div class="form-group">
                   <label>Enter Description</label>
-                  <textarea requierd rows="6" cols="" name="desc" class="form-control"></textarea>
+                  <textarea requierd rows="6" cols="" name="description" class="form-control"></textarea>
                   </div>
                   
                   <button class="btn btn-success">Publish Job</button>

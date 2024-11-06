@@ -18,14 +18,14 @@ public class JobDAO {
 		boolean f = false;
 		
 		try {
-			String sql = "insert into jobs(title,description,catagory,status,location) values(?,?,?,?,?)"; 
+			String sql = "insert into jobs(title,location,category,status,description) values(?,?,?,?,?)"; 
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, j.getTitle());
-			ps.setString(2, j.getDescription());
+			ps.setString(2, j.getLocation());
 			ps.setString(3, j.getCatagory());
 			ps.setString(4, j.getStatus());
-			ps.setString(5, j.getLocation());
+			ps.setString(5, j.getDescription());
 			 
 			int i = ps.executeUpdate();
 			

@@ -24,14 +24,14 @@ public class AddPostServelet extends HttpServlet {
 			String location=req.getParameter("location");
 			String category=req.getParameter("category");
 			String status=req.getParameter("status");
-			String desc=req.getParameter("desc");
+			String description=req.getParameter("description");
 			
 			Jobs j=new Jobs();
 			j.setTitle(title);
-			j.setDescription(desc);
 			j.setLocation(location);
-			j.setStatus(status);
 			j.setCatagory(category);
+			j.setStatus(status);
+			j.setDescription(description);
 			
 			HttpSession session=req.getSession();
 			
