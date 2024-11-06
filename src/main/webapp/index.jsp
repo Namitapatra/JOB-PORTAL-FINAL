@@ -21,10 +21,6 @@ background-size: cover;
 <body>
 <%@include file="all_component/navbar.jsp" %>
 
-<% Connection conn=DBConnect.getConn();
-out.println(conn);
-%>
-
 <div class="container-fluid back-img">
    <div class="text-center">
      <h1 class="text=whit p-4">
