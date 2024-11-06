@@ -28,7 +28,7 @@ public class JobDAO {
 			ps.setString(3, j.getCatagory());
 			ps.setString(4, j.getStatus());
 			ps.setString(5, j.getLocation());
-			
+			 
 			int i=ps.executeUpdate();
 			
 			if(i==1) {
