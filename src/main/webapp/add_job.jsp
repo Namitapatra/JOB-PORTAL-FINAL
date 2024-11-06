@@ -22,7 +22,7 @@
                   
                   <h5>Add Jobs</h5>
               </div>
-              <form action="addJob" method="post">
+              <form action="add_job" method="post">
                   <div class="form-group">
                      <label>Enter Titel</label> <input type="text" name="totle" required class="form-control">
                   </div>
