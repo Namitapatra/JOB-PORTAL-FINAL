@@ -8,31 +8,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.etity.User;
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
-    // Updated hardcoded credentials
-    private static final String USERNAME = "admin@gmail.com";
-    private static final String PASSWORD = "admin123";
-
+  
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Retrieve username and password from the form
+        try {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        User u=new User();
+        HttpSession session = request.getSession();
 
-        // Check credentials
-        if (USERNAME.equals(username) && PASSWORD.equals(password)) {
-            // Successful login, start a session
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
-            
-            // Redirect to a welcome page or dashboard
-            response.sendRedirect("admin.jsp");
+       
+        if ("admin@gmail.com".equals(username) && "admin123".equals(password)) 
+        {
+            session.setAttribute("userobj", u);
+             u.setRole("admin");
+             response.sendRedirect("admin.jsp");
         } else {
-            // Invalid login, redirect back to login page with error message
-            response.sendRedirect("login.jsp?error=invalid");
+        
+        	
         }
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+      }
     }
-}
+
