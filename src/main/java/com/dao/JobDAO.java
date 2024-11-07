@@ -130,23 +130,22 @@ boolean f = false;
 		return f;  
 	}
 	
-	public boolean deleteJobs(int id)
-	{
-		boolean f=false;
-		
-		try {
-			String sql="delete from jobs id=? ";
-			PreparedStatement ps=conn.prepareStatement(sql);
-			ps.setInt(1, id);
-			
-			int i=ps.executeUpdate();
-			if (i == 1) {
-				f = true;
-			}
-			
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		return f;
+	public boolean deleteJobs(int id) {
+	    boolean f = false;
+	    
+	    try {
+	        String sql = "DELETE FROM jobs WHERE id = ?";
+	        PreparedStatement ps = conn.prepareStatement(sql);
+	        ps.setInt(1, id);
+	        
+	        int i = ps.executeUpdate();
+	        if (i == 1) {
+	            f = true;
+	        }
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return f;
 	}
 }
