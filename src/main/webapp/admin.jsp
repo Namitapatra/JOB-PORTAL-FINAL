@@ -20,7 +20,7 @@ background-size: cover;
 </head>
 <body>
 <c:if test="${userobj.role ne 'admin'}">
- <c:rediect url="login.jsp"></c:rediect>
+ <c:redirect url="login.jsp"></c:redirect>
 </c:if>
 
    <%@include file="all_component/navbar.jsp" %>

@@ -13,6 +13,9 @@
 <%@include file="all_component/all_css.jsp" %>
 </head>
 <body style="background-color: #f0f1f2;">
+<c:if test="${userobj.role ne 'admin'}">
+ <c:redirect url="login.jsp"></c:redirect>
+</c:if>
    <%@include file="all_component/navbar.jsp" %>
       
    <div class="container" style="background-color: #ffffff;">

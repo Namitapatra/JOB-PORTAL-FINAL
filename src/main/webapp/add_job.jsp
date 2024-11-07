@@ -10,6 +10,9 @@
 <%@include file="all_component/all_css.jsp" %>
 </head>
 <body>
+<c:if test="${userobj.role ne 'admin'}">
+ <c:redirect url="login.jsp"></c:redirect>
+</c:if>
    <%@include file="all_component/navbar.jsp" %>
    <div class="container p-2">
        <div class="col-md-10 offset-md-1">
