@@ -2,6 +2,10 @@
     pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <%@page isELIgnored="false" %>
+<%@ page import="com.dao.JobDAO" %>
+<%@ page import="com.DB.DBConnect" %>
+<%@ page import="com.etity.Jobs" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,19 +25,22 @@
                 <% 
                 int id=Integer.parseInt(request.getParameter("id"));
                 JobDAO dao = new JobDAO(DBConnect.getConn());
-                Jobs j=dao.getJobById(id);
+                Jobs j = dao.getJobById(id);
                 %>
+                
                   
                   <h5>Edit Jobs</h5>
               </div>
               <form action="add_job" method="post">
+              
+              <input type="hidden" value="<%=j.getId()%>">
                   <div class="form-group">
-                     <label>Enter Title</label> <input type="text" name="title" required class="form-control">
+                     <label>Enter Title</label> <input type="text" name="title" required class="form-control" value="<%=j.getTitle()%>">
                   </div>
                   <div class="form-row">
                      <div class="form-group col-md-4">
                         <label>Location</label> <select name="location" class="custom-select" id="inlineFormCustomSelectPref">
-                             <option selectrd>Choose...</option>
+                             <option value="<%=j.getLocation()%>"><%=j.getLocation() %></option>
                              <option value="Odisha">Odisha</option>
                              <option value="Jharkhand">Jharkhand</option>
                              <option value="Gujurat">Gujurat</option>
@@ -46,7 +53,7 @@
                      </div>
                      <div class="form-group col-md-4">
                          <label>Category</label> <select class="custom-select" id="inlineFormCustomSelectPref" name="category">
-                                <option selectrd>Choose...</option>
+                                <option value="<%=j.getLocation()%>"><%=j.getCategory() %></option>
                                 <option value="IT">IT</option>    
                                 <option value="Devloper">Devloper</option>
                                 <option value="Banking">Banking</option>
@@ -57,6 +64,7 @@
                      
                      <div class="form-group col-md-4">
                          <label>Status</label> <select class="form-control" name="status">
+                             <option class="Active" value=<%=j.getStatus() %>><%=j.getStatus() %></option>
                               <option class="Active" value="Active">Active</option>
                                <option class="Inactive" value="Inactive">Inactive</option>
                          </select>
@@ -65,10 +73,10 @@
                   
                   <div class="form-group">
                   <label>Enter Description</label>
-                  <textarea requierd rows="6" cols="" name="description" class="form-control"></textarea>
+                  <textarea requierd rows="6" cols="" name="description" class="form-control"><%=j.getDescription() %></textarea>
                   </div>
                   
-                  <button class="btn btn-success">Publish Job</button>
+                  <button class="btn btn-success">Update Job</button>
               </form>
           </div>
           </div>
