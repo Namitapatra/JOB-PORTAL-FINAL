@@ -31,7 +31,7 @@
                   
                   <h5>Edit Jobs</h5>
               </div>
-              <form action="add_job" method="post">
+              <form action="update" method="post">
               
               <input type="hidden" value="<%=j.getId()%>" name="id">
                   <div class="form-group">
