@@ -34,7 +34,7 @@ public class UpdateJobServlet extends HttpServlet{
 			j.setStatus(status);
 			j.setDescription(description);
 			
-	HttpSession session=req.getSession();
+	       HttpSession session=req.getSession();
 			
 			JobDAO dao=new JobDAO(DBConnect.getConn());
 			boolean f=dao.updateJob(j);
