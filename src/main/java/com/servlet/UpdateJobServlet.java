@@ -14,7 +14,7 @@ public class UpdateJobServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			int id=Integer.parseInt(req.getParameter("id"))
+			int id=Integer.parseInt(req.getParameter("id"));
 			String title=req.getParameter("title");
 			String location=req.getParameter("location");
 			String category=req.getParameter("category");
