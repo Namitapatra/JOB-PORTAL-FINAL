@@ -33,7 +33,7 @@
               </div>
               <form action="add_job" method="post">
               
-              <input type="hidden" value="<%=j.getId()%>">
+              <input type="hidden" value="<%=j.getId()%>" name="id">
                   <div class="form-group">
                      <label>Enter Title</label> <input type="text" name="title" required class="form-control" value="<%=j.getTitle()%>">
                   </div>
