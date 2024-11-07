@@ -58,10 +58,10 @@ public class JobDAO {
 				j=new Jobs();
 				j.setId(rs.getInt(1));
 				j.setTitle(rs.getString(2));
+				j.setDescription(rs.getString(6));
 				j.setLocation(rs.getString(3));
 				j.setCatagory(rs.getString(4));
 				j.setStatus(rs.getString(5));
-				j.setDescription(rs.getString(6));
 				j.setPdata(rs.getTimestamp(7)+"");
 				list.add(j);
 			}

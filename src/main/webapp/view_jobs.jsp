@@ -16,33 +16,41 @@
             
              <h5 class="text-center text-primary">All Jobs</h5>
              
-             <div class="card mt-2">
+               <% 
+                   JobDAO dao = new JobDAO(DBConnect.getConn());
+                   List<Jobs> list=dao.getAllJobs();
+                   for(Jobs j:list) {
+                   %>
+                   <div class="card mt-2">
                  <div class="card-body">
                     <div class="text-center text-primary">
                         <i class="far fa-clipboard fa-2x"></i>
                     </div>
-                    
-                    <h6>Title</h6>
-                    <p>Description</p>
+                 
+                    <h6><%=j.getTitle() %></h6>
+                    <p><%=j.getDescription %></p>
                     <br>
                     <div class="form-row">
                        <div class="form-group col-md-3"> <!-- corrected 'foem-group' to 'form-group' -->
-                           <input type="text" class="form-control form-control-sm" value="Location:" readonly>
+                           <input type="text" class="form-control form-control-sm" value="Location:<%=j.getLocation() %>" readonly>
                        </div>
                        <div class="form-group col-md-3">
-                           <input type="text" class="form-control form-control-sm" value="Category:" readonly>
+                           <input type="text" class="form-control form-control-sm" value="Category:<%=j.getCategory() %>" readonly>
                        </div>
                        <div class="form-group col-md-3">
-                           <input type="text" class="form-control form-control-sm" value="Status:" readonly> <!-- corrected 'Ststus' -->
+                           <input type="text" class="form-control form-control-sm" value="Status:<%=j.getStatus() %>" readonly> <!-- corrected 'Ststus' -->
                        </div>
                     </div>
-                    <h6>Publish Date: 2024-06-31</h6>
+                    <h6>Publish Date:<%=j.Pdata() %></h6>
                     <div class="text-center">
                        <a href="#" class="btn btn-sm bg-success text-white">Edit</a> <!-- corrected 'text-whith' -->
                        <a href="#" class="btn btn-sm bg-danger text-white">Delete</a>
                     </div>
                  </div>
              </div>
+                  <%}
+                   %>
+             
           </div>
        </div>
    </div>   
