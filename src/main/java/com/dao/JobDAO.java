@@ -101,4 +101,32 @@ public class JobDAO {
 		
 		return j;
 	}
+	
+	public boolean updateJob(Jobs j)
+	{
+boolean f = false;
+		
+		try {
+			String sql = "update into jobs title=?,location=?,category=?,status=?,description=? where id=?"; 
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, j.getTitle());
+			ps.setString(2, j.getLocation());
+			ps.setString(3, j.getCategory());
+			ps.setString(4, j.getStatus());
+			ps.setString(5, j.getDescription());
+			ps.setInt(6, j.getId()); 
+			
+			int i = ps.executeUpdate();
+			
+			if (i == 1) {
+				f = true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return f;  
+	}
 }
