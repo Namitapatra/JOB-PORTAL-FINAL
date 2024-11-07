@@ -5,7 +5,7 @@ public class Jobs {
 	private int id;
 	private String title;
 	private String description;
-	private String catagory;
+	private String category;
 	private String status;
 	private String location;
 	private String pdata;
@@ -15,11 +15,11 @@ public class Jobs {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Jobs(String title, String description, String catagory, String status, String location, String pdata) {
+	public Jobs(String title, String description, String category, String status, String location, String pdata) {
 		super();
 		this.title = title;
 		this.description = description;
-		this.catagory = catagory;
+		this.category = category;
 		this.status = status;
 		this.location = location;
 		this.pdata = pdata;
@@ -49,12 +49,12 @@ public class Jobs {
 		this.description = description;
 	}
 
-	public String getCatagory() {
-		return catagory;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setCatagory(String catagory) {
-		this.catagory = catagory;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getStatus() {
@@ -80,6 +80,8 @@ public class Jobs {
 	public void setPdata(String pdata) {
 		this.pdata = pdata;
 	}
+
+	
 	
 	
 	

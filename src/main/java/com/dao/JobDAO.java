@@ -26,7 +26,7 @@ public class JobDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, j.getTitle());
 			ps.setString(2, j.getLocation());
-			ps.setString(3, j.getCatagory());
+			ps.setString(3, j.getCategory());
 			ps.setString(4, j.getStatus());
 			ps.setString(5, j.getDescription());
 			 
@@ -50,7 +50,8 @@ public class JobDAO {
 		
 		try {
 			
-			String sql="select * from jobs order by id description";
+			String sql="select * from jobs order by id DESC";
+
 			PreparedStatement ps=conn.prepareStatement(sql);
 			ResultSet rs=ps.executeQuery();
 			while(rs.next())
@@ -60,7 +61,7 @@ public class JobDAO {
 				j.setTitle(rs.getString(2));
 				j.setDescription(rs.getString(6));
 				j.setLocation(rs.getString(3));
-				j.setCatagory(rs.getString(4));
+				j.setCategory(rs.getString(4));
 				j.setStatus(rs.getString(5));
 				j.setPdata(rs.getTimestamp(7)+"");
 				list.add(j);

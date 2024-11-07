@@ -29,7 +29,7 @@ public class AddPostServelet extends HttpServlet {
 			Jobs j=new Jobs();
 			j.setTitle(title);
 			j.setLocation(location);
-			j.setCatagory(category);
+			j.setCategory(category);
 			j.setStatus(status);
 			j.setDescription(description);
 			
