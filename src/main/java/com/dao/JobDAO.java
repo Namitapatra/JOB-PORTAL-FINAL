@@ -43,16 +43,14 @@ public class JobDAO {
 		return f;  
 	}
 	
-	public List<Jobs> getAllJobs()
-	{
-		List<Jobs> list=new ArrayList<Jobs>();
+	public Jobs getJobById(int id){
 		Jobs j=null;
 		
 		try {
 			
-			String sql="select * from jobs order by id DESC";
-
+			String sql="select * from jobs where id=?";
 			PreparedStatement ps=conn.prepareStatement(sql);
+			ps.setInt(1, id);
 			ResultSet rs=ps.executeQuery();
 			while(rs.next())
 			{
@@ -64,14 +62,14 @@ public class JobDAO {
 				j.setCategory(rs.getString(4));
 				j.setStatus(rs.getString(5));
 				j.setPdata(rs.getTimestamp(7)+"");
-				list.add(j);
+				
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		return list;
+		return j;
 	}
 	
 }
