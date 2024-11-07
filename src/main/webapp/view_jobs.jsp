@@ -3,7 +3,8 @@
 <%@ page import="com.DB.DBConnect" %>
 <%@ page import="com.etity.Jobs" %>
 <%@ page import="java.util.List" %>
-
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +20,11 @@
           <div class="col-md-12">
             
              <h5 class="text-center text-primary">All Jobs</h5>
+             
+              <c:if test="${not empty succMsg}">
+                      <div class="alert alert-success" role="alert">${succMsg}</div> 
+                      <c:remove var="succMsg"/>
+                  </c:if> 
              
              <% 
                 JobDAO dao = new JobDAO(DBConnect.getConn());
