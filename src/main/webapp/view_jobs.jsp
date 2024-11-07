@@ -53,7 +53,9 @@
                         <h6>Publish Date:<%= j.getPdata() %></h6>
                         <div class="text-center">
                             <a href="edit_job.jsp?id=<%=j.getId() %>" class="btn btn-sm bg-success text-white">Edit</a>
-                            <a href="#" class="btn btn-sm bg-danger text-white">Delete</a>
+                            
+                             <a href="delete?id=<%=j.getId() %>" 
+                             class="btn btn-sm bg-danger text-white">Delete</a>
                         </div>
                     </div>
                 </div>
