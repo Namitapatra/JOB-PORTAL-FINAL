@@ -43,6 +43,37 @@ public class JobDAO {
 		return f;  
 	}
 	
+	public List<Jobs> getAllJobs()
+	{
+		List<Jobs> list=new ArrayList<Jobs>();
+		Jobs j=null;
+		
+		try {
+			
+			String sql="select * from jobs order by id DESC";
+
+			PreparedStatement ps=conn.prepareStatement(sql);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next())
+			{
+				j=new Jobs();
+				j.setId(rs.getInt(1));
+				j.setTitle(rs.getString(2));
+				j.setDescription(rs.getString(6));
+				j.setLocation(rs.getString(3));
+				j.setCategory(rs.getString(4));
+				j.setStatus(rs.getString(5));
+				j.setPdata(rs.getTimestamp(7)+"");
+				list.add(j);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
 	public Jobs getJobById(int id){
 		Jobs j=null;
 		
@@ -62,7 +93,6 @@ public class JobDAO {
 				j.setCategory(rs.getString(4));
 				j.setStatus(rs.getString(5));
 				j.setPdata(rs.getTimestamp(7)+"");
-				
 			}
 			
 		} catch (Exception e) {
@@ -71,5 +101,4 @@ public class JobDAO {
 		
 		return j;
 	}
-	
 }

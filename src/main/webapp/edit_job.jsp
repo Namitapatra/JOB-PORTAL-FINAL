@@ -17,10 +17,12 @@
               <div class="card-body">
                   <div class="text-center text-success">
                   <i class="fas fa-user-friends fa-3x"></i>
-                 <c:if test="${not empty succMsg}">
-                      <div class="alert alert-success" role="alert">${succMsg}</div> 
-                      <c:remove var="succMsg"/>
-                  </c:if> 
+                  
+                <% 
+                int id=Integer.parseInt(request.getParameter("id"));
+                JobDAO dao = new JobDAO(DBConnect.getConn());
+                Jobs j=dao.getJobById(id);
+                %>
                   
                   <h5>Edit Jobs</h5>
               </div>
