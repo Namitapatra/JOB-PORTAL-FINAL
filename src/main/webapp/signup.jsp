@@ -148,10 +148,10 @@ html, body {
         <div class="register-container">
             <h1>Create an Account</h1>
             <form>
-                <input type="text" placeholder="Username" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <input type="password" placeholder="Confirm Password" />
+                <input type="text"name="username"  placeholder="Username" />
+                <input type="email" name="email" placeholder="Email" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="password" name="confirm password" placeholder="Confirm Password" />
                 <button>Register</button>
             </form>
             <div class="login-forget">
