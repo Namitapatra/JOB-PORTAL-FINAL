@@ -151,7 +151,7 @@ html, body {
                 <input type="text"name="username"  placeholder="Username" />
                 <input type="email" name="email" placeholder="Email" />
                 <input type="password" name="password" placeholder="Password" />
-                <input type="password" name="confirm password" placeholder="Confirm Password" />
+                <input type="password" name="confirmpassword" placeholder="Confirm Password" />
                 <button>Register</button>
             </form>
             <div class="login-forget">
