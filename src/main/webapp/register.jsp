@@ -147,7 +147,23 @@ html, body {
     <section class="container">
         <div class="register-container">
             <h1>Create an Account</h1>
-            <form>
+            <%
+                String succMsg = (String) session.getAttribute("succMsg");
+                String errorMsg = (String) session.getAttribute("errorMsg");
+                if (succMsg != null) {
+            %>
+                <div style="color: green; font-size: 1.2rem;"> <%= succMsg %> </div>
+            <%
+                session.removeAttribute("succMsg"); // remove success message after displaying
+                }
+                if (errorMsg != null) {
+            %>
+                <div style="color: red; font-size: 1.2rem;"> <%= errorMsg %> </div>
+            <%
+                session.removeAttribute("errorMsg"); // remove error message after displaying
+                }
+            %>
+            <form action="add_user" method="post">
                 <input type="text"name="username"  placeholder="Username" />
                 <input type="email" name="email" placeholder="Email" />
                 <input type="password" name="password" placeholder="Password" />
