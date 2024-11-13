@@ -153,7 +153,7 @@ html, body {
     <button>Login</button>
 </form>
             <div class="register-forget">
-                <a href="signup.jsp">Register</a>
+                <a href="register.jsp">Register</a>
                 <a href="#">Forgot Password?</a>
             </div>
         </div>

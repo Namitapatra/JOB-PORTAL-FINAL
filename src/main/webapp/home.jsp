@@ -14,7 +14,7 @@
 <%@include file="all_component/all_css.jsp" %>
 </head>
 <body style="background-color: #f0f1f2">
-  <%--   <c:if test="${empty userobj}">
+    <%--  <c:if test="${empty userobj}">
        <c:redirecturl="Login.jsp/>
     </c:if>--%>
    <%@include file="all_component/navbar.jsp" %>
